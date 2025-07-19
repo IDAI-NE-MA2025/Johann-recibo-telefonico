@@ -217,9 +217,9 @@
                     <h2 for="paquetes">Paquetes</h2>
                     <br>
                     <select name="paquetes" id="paquetes">
-                        <option value="residencial">Residencial</option>
-                        <option value="pyme">PYMES</option>
-                        <option value="empresa">Empresas</option>
+                        <option value="residencial">Residencial (321 mx)</option>
+                        <option value="pyme">PYMES (654 mx)</option>
+                        <option value="empresa">Empresas (987 mx)</option>
                     </select>
                 </div>
 
@@ -247,19 +247,50 @@
             }
         
             
-        else if (formulario.plan.vaule == "internet")
+        else if (formulario.plan.value == "internet")
         {
             total = total + 200;
         }
-        else if (formulario.plan.vaule == "tv")
+        else if (formulario.plan.value == "tv")
         {
             total = total + 300;
         }
-        formulario.resultado.value = total;
-
-        alert("el total a pagar es:" + total);
-
         
+        if(formulario.antivirus.checked == true)
+        {
+            total = total + 50;
+        }
+        if(formulario.nube.checked == true)
+        {
+            total = total + 150
+        }
+        if(formulario.ws.checked == true)
+        {
+            total = total + 250
+        }
+
+
+         if(formulario.paquetes.value == "residencial")
+        {
+            total = total + 321;
+        }
+        else if(formulario.paquetes.value == "pyme")
+        {
+            total = total + 654;
+        }
+        else if(formulario.paquetes.value == "empresa")
+        {
+            total = total + 987;
+        }
+
+
+
+
+
+
+
+
+        formulario.resultado.value = total;     
     }
        alert("Hola mundo, estoy en JavaSCRIP")
     </script>
