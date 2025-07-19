@@ -180,12 +180,16 @@
                         </label>
                     </div>
                     <div>
-                        <label for="internet">Teléfono + Internet (200 MX)</label>
-                        <input type="radio" id="internet" name="plan" value="internet">
+                        <label for="internet">Teléfono + Internet (200 MX)
+                            <input type="radio" id="internet" name="plan" value="internet">
+                        </label>
+                        
                     </div>
                     <div>
-                        <label for="tv">Teléfono + Internet + TV (300 MX)</label>
-                        <input type="radio" id="tv" name="plan" value="tv">
+                        <label for="tv">Teléfono + Internet + TV (300 MX)
+                             <input type="radio" id="tv" name="plan" value="tv">
+                        </label>
+                        
                     </div>
                 </div>
 
@@ -228,6 +232,37 @@
         </form>
     </div>
 
+    <script>
+        /*"var indica que es una variable*/
+        /*"document indica que estoy entrando al archivo html"*/
+       var formulario = document.getElementById("calculoMinutos");
+       function calcular(){
+        var total = 0;
+        var minutos = formulario.minCel.value;
+        total = minutos * 10;
+        /*"CONDICIONES EN JAVA"*/
+        if (formulario.plan.vaule == "tel")
+            {
+                total = total + 100;
+            }
+        
+            
+        else if (formulario.plan.vaule == "internet")
+        {
+            total = total + 200;
+        }
+        else if (formulario.plan.vaule == "tv")
+        {
+            total = total + 300;
+        }
+        formulario.resultado.value = total;
+
+        alert("el total a pagar es:" + total);
+
+        
+    }
+       alert("Hola mundo, estoy en JavaSCRIP")
+    </script>
 </body>
 
 </html>
